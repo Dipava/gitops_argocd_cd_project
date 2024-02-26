@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask_app_deploy
+spec:
+  selector:
+    matchLabels:
+      app: flask_app
+  template:
+    metadata:
+      labels:
+        app: flask_app
+    spec:
+      containers:
+      - name: flask_app_container
+        image: droytech/gitops-argo-app:tag
+        resources:
+        ports:
+        - containerPort: 5000
