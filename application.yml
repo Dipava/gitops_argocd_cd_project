@@ -3,21 +3,21 @@ kind: Application
 metadata:
   name: flaskapp
   namespace: argocd
-  spec:
-    project: default
+spec:
+  project: default
 
-    source:
-      repoURL: https://github.com/Dipava/gitops_argocd_cd_project.git
-      targetRevision: HEAD
-      path: main
-    destination:
-      server: https://kubernetes.default.svc
-      namespace: default
+  source:
+    repoURL: https://github.com/Dipava/gitops_argocd_cd_project.git
+    targetRevision: HEAD
+    path: main
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
 
-    syncOptions:
-      - CreateNamespace=false
+  syncOptions:
+    - CreateNamespace=false
 
-    automated:
-      selfHeal: false
-      prune: false
+  automated:
+    selfHeal: false
+    prune: false
 
