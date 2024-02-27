@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/Dipava/gitops_argocd_cd_project.git
     targetRevision: main
-    path: /
+    path: app
   destination:
     server: https://kubernetes.default.svc
     namespace: default
